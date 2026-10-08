@@ -1,0 +1,280 @@
+{"timestamp": "2026-10-07T01:11:53Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-07T01:11:53Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-07T01:11:53Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-07T01:11:53Z", "event": "system_action_started", "action": "shutdown", "system": "Windows"}
+{"timestamp": "2026-10-07T01:11:53Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-07T01:11:53Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-07T01:11:54Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:11:54Z", "event": "file_written", "path": "C:\\Users\\autha\\AppData\\Local\\Temp\\pytest-of-autha\\pytest-0\\test_write_command_does_not_pr0\\note.txt", "application": "notepad", "bytes_written": 5}
+{"timestamp": "2026-10-07T01:11:54Z", "event": "application_closed", "application": "notepad"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:13:52Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:14:27Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:15:09Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:20:03Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:20:18Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:22:21Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:22:21Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:22:21Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:22:21Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:22:33Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:22:33Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:22:33Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:22:33Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:26:31Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:26:31Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-07T01:26:31Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-07T01:26:31Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:26:31Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:26:31Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:26:31Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:26:32Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:05Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:20Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:33Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:45Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-07T01:27:55Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-07T01:30:32Z", "event": "google_api_key_updated"}
+{"timestamp": "2026-10-08T15:42:06Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:42:06Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:42:06Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:42:06Z", "event": "command_completed", "executable": "python", "return_code": 0, "elapsed_seconds": 0.0}
+{"timestamp": "2026-10-08T15:42:08Z", "event": "browser_opened", "target": "https://example.com"}
+{"timestamp": "2026-10-08T15:42:12Z", "event": "browser_opened", "target": "https://web.whatsapp.com/"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_opened", "target": "https://www.instagram.com/"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "command_blocked", "reason": "JARVIS_DISABLE_COMMANDS"}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "file_written", "path": "C:\\Users\\autha\\AppData\\Local\\Temp\\pytest-of-autha\\pytest-3\\test_write_command_does_not_pr0\\note.txt", "application": "notepad", "bytes_written": 5}
+{"timestamp": "2026-10-08T15:42:14Z", "event": "application_closed", "application": "notepad"}
+{"timestamp": "2026-10-08T15:49:30Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:49:30Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:49:30Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:49:30Z", "event": "command_completed", "executable": "python", "return_code": 0, "elapsed_seconds": 0.0}
+{"timestamp": "2026-10-08T15:49:31Z", "event": "browser_opened", "target": "https://example.com"}
+{"timestamp": "2026-10-08T15:49:34Z", "event": "browser_opened", "target": "https://web.whatsapp.com/"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_opened", "target": "https://www.instagram.com/"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "command_blocked", "reason": "JARVIS_DISABLE_COMMANDS"}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "file_written", "path": "C:\\Users\\autha\\AppData\\Local\\Temp\\pytest-of-autha\\pytest-6\\test_write_command_does_not_pr0\\note.txt", "application": "notepad", "bytes_written": 5}
+{"timestamp": "2026-10-08T15:49:36Z", "event": "application_closed", "application": "notepad"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "command_completed", "executable": "python", "return_code": 0, "elapsed_seconds": 0.0}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://example.com"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "system_action_started", "action": "shutdown", "system": "Windows"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://web.whatsapp.com/"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://www.instagram.com/"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "command_blocked", "reason": "JARVIS_DISABLE_COMMANDS"}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "file_written", "path": "C:\\Users\\autha\\AppData\\Local\\Temp\\pytest-of-autha\\pytest-7\\test_write_command_does_not_pr0\\note.txt", "application": "notepad", "bytes_written": 5}
+{"timestamp": "2026-10-08T15:52:51Z", "event": "application_closed", "application": "notepad"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "command_completed", "executable": "python", "return_code": 0, "elapsed_seconds": 0.0}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://example.com"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "system_action_started", "action": "shutdown", "system": "Windows"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://web.whatsapp.com/"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://www.instagram.com/"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "command_blocked", "reason": "JARVIS_DISABLE_COMMANDS"}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "file_written", "path": "C:\\Users\\autha\\AppData\\Local\\Temp\\pytest-of-autha\\pytest-8\\test_write_command_does_not_pr0\\note.txt", "application": "notepad", "bytes_written": 5}
+{"timestamp": "2026-10-08T16:17:16Z", "event": "application_closed", "application": "notepad"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "action_confirmation", "description": "open app", "confirmed": true}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "command_completed", "executable": "python", "return_code": 0, "elapsed_seconds": 0.0}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://example.com"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "system_action_started", "action": "shutdown", "system": "Windows"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://web.whatsapp.com/"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://www.instagram.com/"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://www.google.com/search?q=climate+change+news"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://www.google.com/"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "system_access_configured", "enabled": true}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "system_access_configured", "enabled": false}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_action_completed", "operation": "play"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_action_completed", "operation": "pause"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_action_completed", "operation": "next_tab"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_action_completed", "operation": "open_tab"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_control_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_action_completed", "operation": "scroll"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_action_completed", "operation": "type"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://github.com/"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://www.google.com/search?q=python+documentation"}
+{"timestamp": "2026-10-08T16:17:27Z", "event": "browser_opened", "target": "https://portal.example"}
+{"timestamp": "2026-10-08T16:17:28Z", "event": "browser_search_blocked", "reason": "commands_disabled"}
+{"timestamp": "2026-10-08T16:17:28Z", "event": "browser_search_opened", "query_length": 10}
+{"timestamp": "2026-10-08T16:17:28Z", "event": "command_blocked", "reason": "JARVIS_DISABLE_COMMANDS"}
+{"timestamp": "2026-10-08T16:17:28Z", "event": "file_written", "path": "C:\\Users\\autha\\AppData\\Local\\Temp\\pytest-of-autha\\pytest-9\\test_write_command_does_not_pr0\\note.txt", "application": "notepad", "bytes_written": 5}
+{"timestamp": "2026-10-08T16:17:28Z", "event": "application_closed", "application": "notepad"}
