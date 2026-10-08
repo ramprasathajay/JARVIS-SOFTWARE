@@ -1,0 +1,10 @@
+groq
+google-genai
+numpy
+sounddevice
+SpeechRecognition
+pyttsx3
+pywin32; sys_platform == "win32"
+pywinauto; sys_platform == "win32"
+playwright
+pytest
