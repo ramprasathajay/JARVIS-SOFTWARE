@@ -80,6 +80,11 @@ python jarvis_tkinter.py
 :: Command Prompt
 set JARVIS_ENABLE_COMMANDS=1
 python jarvis_tkinter.py
+
+```install app
+::terminal
+pyinstaller --onefile --windowed --name MyApp --icon=app_icon.ico your_app.py
+
 ```
 
 Restart JARVIS after changing this variable. To block every action regardless of other settings, set `JARVIS_DISABLE_COMMANDS=1`.
