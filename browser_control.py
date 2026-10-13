@@ -1,9 +1,12 @@
 import ipaddress
+import os
 import queue
 import re
+import shutil
 import socket
 import threading
-from urllib.parse import urlsplit
+from difflib import SequenceMatcher
+from urllib.parse import parse_qs, quote_plus, urlsplit
 
 
 class BrowserController:
@@ -24,6 +27,51 @@ class BrowserController:
 				self._thread.start()
 			self._commands.put((operation, value, response))
 		return response.get()
+
+	@staticmethod
+	def _browser_channel():
+		"""Return the configured/installed Chromium browser channel."""
+		requested = os.getenv("JARVIS_BROWSER_CHANNEL", "").strip().casefold()
+		aliases = {
+			"edge": "msedge",
+			"microsoft edge": "msedge",
+			"microsoft-edge": "msedge",
+			"msedge.exe": "msedge",
+			"google chrome": "chrome",
+			"google-chrome": "chrome",
+			"chrome.exe": "chrome",
+			"chromium.exe": "chromium",
+			"auto": "",
+			"default": "",
+		}
+		requested = aliases.get(requested, requested)
+		# An old or misspelled setting should not prevent browser auto-detection.
+		if requested not in {"msedge", "chrome", "chromium", ""}:
+			requested = ""
+		if requested:
+			return requested
+
+		for executable in ("msedge.exe", "chrome.exe", "chromium.exe"):
+			if shutil.which(executable):
+				return executable.removesuffix(".exe")
+
+		local_app_data = os.getenv("LOCALAPPDATA", "")
+		program_files = os.getenv("PROGRAMFILES", "")
+		program_files_x86 = os.getenv("PROGRAMFILES(X86)", "")
+		known_paths = {
+			"msedge": (
+				os.path.join(program_files, "Microsoft", "Edge", "Application", "msedge.exe"),
+				os.path.join(program_files_x86, "Microsoft", "Edge", "Application", "msedge.exe"),
+			),
+			"chrome": (
+				os.path.join(program_files, "Google", "Chrome", "Application", "chrome.exe"),
+				os.path.join(local_app_data, "Google", "Chrome", "Application", "chrome.exe"),
+			),
+		}
+		for channel, paths in known_paths.items():
+			if any(path and os.path.isfile(path) for path in paths):
+				return channel
+		return None
 
 	def close(self, timeout=60.0):
 		with self._lock:
@@ -113,23 +161,42 @@ class BrowserController:
 
 					playwright = sync_playwright().start()
 				if browser is None or not browser.is_connected():
-					browser = playwright.chromium.launch(
-						channel="msedge",
-						headless=False,
-						args=["--inprivate"],
-					)
+					channel = self._browser_channel()
+					launch_options = {"headless": False}
+					if channel is not None:
+						launch_options["channel"] = channel
+					try:
+						browser = playwright.chromium.launch(**launch_options)
+					except Exception as exc:
+						raise RuntimeError(
+							"Could not open the controlled browser. Install Microsoft Edge or "
+							"Google Chrome, or set JARVIS_BROWSER_CHANNEL to msedge, chrome, "
+							"or chromium."
+						) from exc
 					context = browser.new_context()
 					context.route("**/*", self._guard_request)
 				if operation == "open":
 					if page is None or page.is_closed():
 						page = context.new_page()
 					page.goto(value, wait_until="domcontentloaded", timeout=30000)
+					fallback_used = False
+					if "google.com/sorry/" in page.url.casefold():
+						query = parse_qs(urlsplit(value).query).get("q", [""])[0].strip()
+						if query:
+							fallback_url = (
+								"https://www.bing.com/search?q=" + quote_plus(query)
+							)
+							page.goto(fallback_url, wait_until="domcontentloaded", timeout=30000)
+							fallback_used = True
 					loaded = self._wait_for_page_load(page)
 					status = "fully loaded" if loaded else "opened; some page resources are still loading"
-					response.put(f"{page.url} {status} in the controlled browser.")
+					fallback_note = " after switching from Google's challenge page" if fallback_used else ""
+					response.put(
+						f"{page.url} {status}{fallback_note} in a normal tab in the controlled browser."
+					)
 				elif operation == "open_tab":
 					page = context.new_page()
-					response.put("Opened a new InPrivate tab in the controlled browser.")
+					response.put("Opened a new normal tab in the controlled browser.")
 				elif operation == "next_tab":
 					pages = [candidate for candidate in context.pages if not candidate.is_closed()]
 					if len(pages) < 2:
@@ -180,7 +247,29 @@ class BrowserController:
 							matches.append((role, locator, count))
 					total_matches = sum(count for _, _, count in matches)
 					if total_matches == 0:
-						response.put(f"No link or button matching '{label}' was found on the current page.")
+						# Speech recognition may slightly misspell a button/link label.
+						# Fuzzy-match only a unique, clearly superior accessible name.
+						candidates = []
+						for role in ("link", "button"):
+							for candidate in page.get_by_role(role).all():
+								name = (candidate.get_attribute("aria-label") or "").strip()
+								if not name:
+									try:
+										name = candidate.inner_text(timeout=1000).strip()
+									except Exception:
+										name = ""
+								if name:
+									score = SequenceMatcher(None, label.casefold(), name.casefold()).ratio()
+									candidates.append((score, role, candidate, name))
+						candidates.sort(key=lambda item: item[0], reverse=True)
+						if candidates and candidates[0][0] >= 0.78 and (
+							len(candidates) == 1 or candidates[0][0] - candidates[1][0] >= 0.06
+						):
+							_, role, candidate, matched_name = candidates[0]
+							candidate.click(timeout=10000)
+							response.put(f"Clicked {role} '{matched_name}' after interpreting '{label}'.")
+						else:
+							response.put(f"No link or button matching '{label}' was found on the current page.")
 					elif total_matches > 1:
 						response.put(f"More than one link or button matches '{label}'. Use more specific text.")
 					else:
