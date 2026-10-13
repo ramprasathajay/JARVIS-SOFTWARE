@@ -63,6 +63,40 @@ TOOL_DEFINITIONS = [
 	{
 		"type": "function",
 		"function": {
+			"name": "search_or_install_app",
+			"description": (
+				"Search Microsoft Store for an app the user wants to find or install. "
+				"The host asks before opening the search. Show the user the results; they "
+				"must review the publisher and choose Install themselves. Never install silently."
+			),
+			"parameters": {
+				"type": "object",
+				"properties": {"name": {"type": "string", "minLength": 1, "maxLength": 100}},
+				"required": ["name"],
+				"additionalProperties": False,
+			},
+		},
+	},
+	{
+		"type": "function",
+		"function": {
+			"name": "uninstall_app",
+			"description": (
+				"Open Windows Installed apps for the user to uninstall the named app. "
+				"The host asks first. JARVIS does not remove software; the user reviews "
+				"the app and confirms the uninstall in Windows Settings."
+			),
+			"parameters": {
+				"type": "object",
+				"properties": {"name": {"type": "string", "minLength": 1, "maxLength": 100}},
+				"required": ["name"],
+				"additionalProperties": False,
+			},
+		},
+	},
+	{
+		"type": "function",
+		"function": {
 			"name": "close_app",
 			"description": (
 				"Request a normal close of one uniquely matched open app window. "
@@ -248,7 +282,7 @@ TOOL_DEFINITIONS = [
 			"description": (
 				"Perform one confirmed action in an already-open JARVIS-controlled "
 				"browser. Supported operations: scroll, click, type, play, pause, "
-				"next_tab, open_tab (opens an InPrivate tab), fullscreen, zoom."
+				"next_tab, open_tab (opens a normal tab), fullscreen, zoom."
 			),
 			"parameters": {
 				"type": "object",
@@ -415,3 +449,4 @@ def generate_reply(client, provider, model, messages, execute_tool, temperature=
 	return _generate_groq_reply(
 		client, model, messages, execute_tool, temperature, max_tokens
 	)
+
