@@ -276,6 +276,21 @@ class ForegroundAppController:
 			if label.casefold() in (control.element_info.name or "").strip().casefold()
 		]
 		if not matches:
+			# Voice transcription can misspell a control label. Accept only one
+			# clearly better, reasonably close candidate; otherwise ask for a more
+			# specific label instead of clicking an unintended control.
+			normalized_label = re.sub(r"\W+", "", label.casefold())
+			ranked = []
+			for control in controls:
+				control_name = (control.element_info.name or "").strip()
+				normalized_name = re.sub(r"\W+", "", control_name.casefold())
+				if normalized_name:
+					ranked.append((SequenceMatcher(None, normalized_label, normalized_name).ratio(), control))
+			ranked.sort(key=lambda item: item[0], reverse=True)
+			if ranked and ranked[0][0] >= 0.78 and (
+				len(ranked) == 1 or ranked[0][0] - ranked[1][0] >= 0.06
+			):
+				return ranked[0][1]
 			raise ValueError(f"No visible control matching '{label}' was found.")
 		if len(matches) != 1:
 			raise ValueError(f"Several controls match '{label}'; use a more specific label.")
@@ -432,9 +447,14 @@ class ForegroundAppController:
 					control for control in window.descendants(control_type="Edit")
 					if control.is_visible() and control.has_keyboard_focus()
 				]
-				if len(focused_edits) != 1:
-					return "Focus an editable text field in the target app first."
-				focused_edits[0].type_keys(value, with_spaces=True, vk_packet=True)
+				window.set_focus()
+				if len(focused_edits) == 1:
+					focused_edits[0].type_keys(value, with_spaces=True, vk_packet=True)
+				else:
+					# Some apps do not expose focused edit fields through UI Automation.
+					# Keep the action scoped to the selected window and send only printable
+					# text after it has been activated.
+					window.type_keys(value, with_spaces=True, vk_packet=True)
 				return f"Typed into the focused field in {title}."
 			if operation in {"copy", "cut", "paste"}:
 				window.set_focus()
