@@ -469,21 +469,21 @@ def open_authorized_application(request):
         if argument:
             return f"{application} does not accept a URL argument; use the named app only."
         target_url = WEB_APPLICATION_URLS[application]
-        result = webbrowser.open(target_url, new=2)
+        opened = webbrowser.open(target_url, new=2)
         audit_event("browser_opened", target=target_url)
-        return f"Opened {target_url}" if result else f"Could not open {target_url}."
+        return f"Opened {target_url}" if opened else f"Could not open {target_url}."
     elif application == "browser":
         if not argument:
             target_url = "https://www.google.com/"
             result = browser_control.execute_browser_action("open", target_url)
             audit_event("browser_opened", target=target_url)
-            return result if result else "Opened the homepage."
+            return result if result else "Could not open the homepage."
         target_url, error = _public_url(argument)
         if error:
             return f"Browser usage: /open browser https://example.com yes. {error}"
-        result = webbrowser.open(target_url, new=2)
+        opened = webbrowser.open(target_url, new=2)
         audit_event("browser_opened", target=target_url)
-        return f"Opened {target_url}" if result else f"Could not open {target_url}."
+        return f"Opened {target_url}" if opened else f"Could not open {target_url}."
     else:
         if argument:
             return "Only browser accepts an argument; application launches use a named app."
@@ -1096,10 +1096,6 @@ def scan_authorized_url(request):
                 "purpose": "Run narrowly selected known-exposure templates after approval.",
                 "authorization": "Do not run active templates, intrusive checks, or high-impact tags without explicit permission.",
             },
-            {
-                "tool": "wifite",
-                "command": f"wifite {shlex.quote()}"
-            }
         ],
         "limitations": [
             "No authentication, crawling, brute force, payloads, exploitation, or state-changing requests",
@@ -1177,6 +1173,11 @@ def parse_voice_action(user_input):
     normalized = re.sub(r"[^a-z0-9:/?._%+=&# -]", "", user_input.lower()).strip()
     normalized = re.sub(r"^jarvis[ ,]+", "", normalized)
     raw_input = re.sub(r"^jarvis[ ,]+", "", user_input.strip(), flags=re.IGNORECASE)
+    # Speech-to-text commonly turns click/tap into short spelling variants. Keep
+    # correction limited to command words; labels are matched against the actual
+    # app/page controls later, where ambiguity can be rejected safely.
+    normalized = re.sub(r"\b(?:clik|klick|tapp|tap)\b", "click", normalized)
+    raw_input = re.sub(r"\b(?:clik|klick|tapp|tap)\b", "click", raw_input, flags=re.IGNORECASE)
     if normalized in {"run installer", "install downloaded app"}:
         return "run_installer", ""
     terminal_match = re.fullmatch(
@@ -1201,15 +1202,15 @@ def parse_voice_action(user_input):
             request += f" {scan_match.group(2)}"
         return "scan", request
 
-    desktop_match = re.fullmatch(r"(?:screen|desktop) (.+)", raw_input, re.IGNORECASE)
+    desktop_match = re.fullmatch(r"(?:screen|desktop|app|application) (.+)", raw_input, re.IGNORECASE)
     if desktop_match:
         desktop_request = desktop_match.group(1).strip()
         desktop_normalized = re.sub(
             r"[^a-z0-9 ._-]", "", desktop_request.casefold()
         ).strip()
         desktop_action = re.fullmatch(
-            r"(?:status|scroll (?:up|down)|search (?:for )?.+|"
-            r"(?:tap|click|double click|double-click|right click|right-click|open) .+)",
+			r"(?:status|scroll (?:up|down)|search (?:for )?.+|type .+|press [a-z0-9+_-]+|"
+			r"(?:click|tap|double click|double-click|right click|right-click|open|delete) .+)",
             desktop_normalized,
         )
         if desktop_action:
@@ -1228,11 +1229,8 @@ def parse_voice_action(user_input):
             return "desktop_control", desktop_request
 
     if normalized in {
-        "open tab", "open a new tab", "new tab",
-        "private tab", "open private tab", "open a new private tab", "new private tab",
-        "browser private tab", "open a private tab",
-        "open a private browser tab", "open a new private browser tab",
-        "new private browser tab",
+        "open tab", "open a new tab", "new tab", "private tab",
+        "open private tab", "open a private tab", "browser private tab",
     }:
         return "browser_control", "open_tab yes"
     if normalized in {"next tab", "switch tab"}:
@@ -1250,7 +1248,7 @@ def parse_voice_action(user_input):
     browser_scroll = re.fullmatch(r"(?:browser )?scroll (up|down)(?: (?:yes|y|ok))?", normalized)
     if browser_scroll:
         return "browser_control", f"scroll {browser_scroll.group(1)} yes"
-    browser_click = re.fullmatch(r"(?:browser )?(?:click|tap)(?: the button)? (.+)", normalized)
+    browser_click = re.fullmatch(r"(?:(?:browser|web|page) )?(?:click|tap)(?: the button)? (.+)", normalized)
     if browser_click:
         return "browser_control", f"click {browser_click.group(1).strip()} yes"
     browser_type = re.fullmatch(r"(?:browser )?type (.+)", raw_input, re.IGNORECASE)
@@ -1270,6 +1268,10 @@ def parse_voice_action(user_input):
     )
     if search_match:
         return "search", search_match.group(1).strip()
+
+    delete_match = re.fullmatch(r"(?:delete|remove) (?:the )?(.+)", raw_input, re.IGNORECASE)
+    if delete_match:
+        return "desktop_control", f"delete {delete_match.group(1).strip()}"
 
     subject_search = re.fullmatch(r"(?:movie|movies|film|films|game|games|file|files) (.+)", normalized)
     if subject_search:
@@ -1331,6 +1333,9 @@ def parse_voice_action(user_input):
         )
         return "generate_code", f"{filename} | {language} | {concept}"
 
+    write_command = re.fullmatch(r"/write(?:-code)?\s+(.+)", raw_input, re.IGNORECASE | re.DOTALL)
+    if write_command:
+        return ("write-code" if raw_input.casefold().startswith("/write-code") else "write"), write_command.group(1).strip()
     write_code_match = re.fullmatch(r"write code ([^ ]+) (.+)", normalized)
     if write_code_match:
         return "write-code", f"{write_code_match.group(1)} | {write_code_match.group(2)}"
